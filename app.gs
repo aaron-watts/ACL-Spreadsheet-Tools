@@ -55,14 +55,14 @@ const replaceSymbols = () => {
     if (row[0].match(pattern)) {
       return [`${row[0].replace(pattern, '')}{*}`];
     }
-    return [row[0]];
+    return [`${row[0]}{*}`];
   })
 
   rangeB.setValues(newData);
   alertMessage('Starting symbols replaced');
 }
 
-// Format Column B
+// Format Column E
 const setColumnE = () => {
   const newValues = colB.map(i => ['approved_state__sys']);
   rangeE.setValues(newValues);
